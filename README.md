@@ -8,4 +8,4 @@ https://learn.adafruit.com/adafruit-circuit-playground-express/pinouts
 
 ## Later explorations
 
-https://learn.adafruit.com/using-servos-with-circuitpython
+https://learn.adafruit.com/using-servos-with-circuitpython?view=all
