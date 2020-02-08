@@ -1,0 +1,18 @@
+#include <Adafruit_CircuitPlayground.h>
+
+void setup() {
+  CircuitPlayground.begin();
+}
+
+
+void loop() {
+  
+  if(CircuitPlayground.leftButton()){ 
+    CircuitPlayground.setPixelColor(0, 255,   0,   0);
+    delay(500);
+    CircuitPlayground.clearPixels();  
+  }
+  
+}
+
+// or CircuitPlayground.rightButton()
