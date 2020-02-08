@@ -1,0 +1,26 @@
+#include <Adafruit_CircuitPlayground.h>
+
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  CircuitPlayground.begin();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  if(CircuitPlayground.leftButton() == true) {
+    Serial.println("Pressed Switch!");
+
+    CircuitPlayground.setPixelColor(0, 255,0,0);
+    CircuitPlayground.setPixelColor(2, 255,155,0);
+    CircuitPlayground.setPixelColor(4, 255,0,0);
+    CircuitPlayground.setPixelColor(6, 255,0,127);
+    
+  }
+  else {
+    CircuitPlayground.clearPixels();
+  }
+
+}
