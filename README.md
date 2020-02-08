@@ -8,6 +8,8 @@ https://makecode.adafruit.com/
 
 ## Reference Docs
 
+https://www.arduino.cc/
+
 https://learn.adafruit.com/adafruit-circuit-playground-express/set-up-arduino-ide
 
 https://learn.adafruit.com/adafruit-circuit-playground-express/pinouts
