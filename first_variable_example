@@ -1,0 +1,27 @@
+#include <Adafruit_CircuitPlayground.h>
+
+int LED_index;      // declare variable
+
+void setup() {
+  CircuitPlayground.begin();
+  Serial.begin(9600);
+  
+  LED_index = 0;    // set variable value
+}
+
+void loop() {
+  CircuitPlayground.clearPixels();
+  delay(500);
+  
+  Serial.print("Turn on LED no:");
+  Serial.println(LED_index);
+  
+  CircuitPlayground.setPixelColor(LED_index, 255,0,0);
+  delay(500);
+  
+  LED_index = LED_index + 1;
+  if(LED_index == 10){
+    LED_index = 0;
+  }
+  
+}
