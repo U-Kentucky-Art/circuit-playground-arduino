@@ -1,0 +1,50 @@
+#include <Adafruit_CircuitPlayground.h>
+
+int LED_index_A;      // declare variable
+int LED_index_B;      // declare variable
+int LED_index_C;      // declare variable
+
+void setup() {
+
+  CircuitPlayground.begin();
+  Serial.begin(9600);
+  
+  LED_index_A = 0;    // set variable value
+  LED_index_B = 1;    // set variable value
+  LED_index_C = 2;    // set variable value
+}
+
+void loop() {
+  
+  CircuitPlayground.clearPixels();
+  delay(10);
+  
+  Serial.print("Turn on LEDs no:");
+  Serial.print(LED_index_A);
+  Serial.print(" | ");
+  Serial.print(LED_index_B);
+  Serial.print(" | ");
+  Serial.println(LED_index_C);
+  
+  CircuitPlayground.setPixelColor(LED_index_A, 255,0,0);
+  CircuitPlayground.setPixelColor(LED_index_B, 255,0,255);
+  CircuitPlayground.setPixelColor(LED_index_C, 255,127,0);
+  delay(11);
+  
+  LED_index_A++;
+  LED_index_B++;
+  LED_index_C++;
+  
+  if(LED_index_A == 10){
+    LED_index_A = 0;
+  }
+
+  if(LED_index_B == 10){
+    LED_index_B = 0;
+  }
+
+  if(LED_index_C == 10){
+    LED_index_C = 0;
+  }
+  
+}
