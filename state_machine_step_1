@@ -1,0 +1,45 @@
+#include <Adafruit_CircuitPlayground.h>
+
+int LED_index;      // declare variable
+
+int timer;
+
+void setup() {
+  CircuitPlayground.begin();
+  Serial.begin(9600);
+  
+  LED_index = 0;    // set variable value
+  timer = 0;
+}
+
+void loop() {
+
+  delay(5);
+  timer++;
+
+ 
+  if(timer == 100){
+    CircuitPlayground.setPixelColor(LED_index, 255,0,0);
+    Serial.println(timer);
+  }
+  else if(timer == 200){
+    CircuitPlayground.clearPixels();
+    Serial.println(timer);
+    timer = 0;    
+  }
+  else {
+    Serial.println(timer);
+    if(CircuitPlayground.leftButton() == true) {
+
+       while(CircuitPlayground.leftButton() == true){
+        Serial.println("waiting");
+       }
+       
+       LED_index = LED_index + 1;
+       if(LED_index == 10){
+         LED_index = 0;
+       }
+    }
+  }
+   
+}
